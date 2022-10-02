@@ -14,12 +14,11 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:application.properties")
 public class DatabaseConfiguration {
-
     @Value("${datasource.url}")
     private String url;
 
     @Value("${datasource.username}")
-   private String username;
+    private String username;
 
     @Value("${datasource.password}")
     private String password;
@@ -31,7 +30,8 @@ public class DatabaseConfiguration {
     private String mode;
 
     @Value("${packages.to.scan}")
-     private String packages;
+    private String packages;
+
 
     @Bean
     public  DataSource getDataSource(){
@@ -43,7 +43,7 @@ public class DatabaseConfiguration {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean getEntityManager() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(getDataSource());
         entityManagerFactoryBean.setPackagesToScan(packages);
