@@ -80,13 +80,33 @@
     </build>
 
     <profiles>
-        <profile> <id>local</id>
+        <profile>
+            <id>local</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation></profile>
-       <profile>
-        <id>develop</id>
-    </profile>
+            </activation>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>develop</id>
+            <properties>
+                <spring.profiles.active>develop</spring.profiles.active>
+            </properties>
+        </profile>
     </profiles>
+
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>local</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+<!--        </profile>-->
+<!--       <profile>-->
+<!--        <id>develop</id>-->
+<!--    </profile>-->
+<!--    </profiles>-->
 
 </project>
