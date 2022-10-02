@@ -17,11 +17,14 @@ public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String name;
     private Long levelId;
 
     @ManyToMany(mappedBy = "skills")
     private Set<Advertisement> advertisements;
+
+    @ManyToOne
+    private Level level;
+
 }
