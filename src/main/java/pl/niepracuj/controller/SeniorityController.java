@@ -15,7 +15,7 @@ public class SeniorityController {
     private final SeniorityService seniorityService;
 
     @GetMapping("/all")
-    public List<SeniorityDto> getSeniorities() {
+    public List<SeniorityDto> getSeniority() {
         return seniorityService.getAllSeniorities();
     }
 

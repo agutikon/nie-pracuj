@@ -11,6 +11,5 @@ import pl.niepracuj.model.enums.SeniorityEnum;
 public class SeniorityDto {
 
     private Long id;
-
     private SeniorityEnum name;
 }

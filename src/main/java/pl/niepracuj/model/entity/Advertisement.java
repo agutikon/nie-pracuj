@@ -1,18 +1,19 @@
 package pl.niepracuj.model.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "advertisements")
 public class Advertisement {
@@ -20,8 +21,8 @@ public class Advertisement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Instant publishDate;
-    private Instant expireDate;
+    private LocalDateTime publishDate;
+    private LocalDateTime expireDate;
     private Long salaryFrom;
     private Long salaryTo;
     private String description;

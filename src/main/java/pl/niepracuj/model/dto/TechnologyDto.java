@@ -1,4 +1,5 @@
 package pl.niepracuj.model.dto;
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.*;
 import pl.niepracuj.model.enums.TechnologyEnum;
 
@@ -12,5 +13,6 @@ import javax.persistence.EnumType;
 public class TechnologyDto {
 
     private Long id;
+
     private TechnologyEnum name;
 }

@@ -1,14 +1,13 @@
 package pl.niepracuj.model.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
-
+@Builder
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "skills")
@@ -19,7 +18,6 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Long levelId;
 
     @ManyToMany(mappedBy = "skills")
     private Set<Advertisement> advertisements;
